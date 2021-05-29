@@ -1,0 +1,31 @@
+# Project: Project1
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = Clock_program.o Graphic_allegro.o
+LINKOBJ  = Clock_program.o Graphic_allegro.o
+LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -L"D:/Mabani_PC/project/bmpio/bmpio/lib" -L"C:/allegro-mingw-gcc6.2.0-x86-static-5.2.2/allegro/lib" -L"C:/graphic.lib" -static-libgcc -lfcp -L"C:/allegro-mingw-gcc6.2.0-x64-static-5.2.2/allegro/lib" C:/allegro-mingw-gcc6.2.0-x64-static-5.2.2/allegro/lib/liballegro_monolith.dll.a
+INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"D:/Mabani_PC/project/bmpio/bmpio/include" -I"C:/allegro-mingw-gcc6.2.0-x86-static-5.2.2/allegro/include" -I"D:/graphic.h" -I"C:/allegro-mingw-gcc6.2.0-x64-static-5.2.2/allegro/include"
+CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++" -I"D:/graphic.h" -I"C:/allegro-mingw-gcc6.2.0-x64-static-5.2.2/allegro/include"
+BIN      = ClockProject.exe
+CXXFLAGS = $(CXXINCS) 
+CFLAGS   = $(INCS) 
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+Clock_program.o: Clock_program.c
+	$(CC) -c Clock_program.c -o Clock_program.o $(CFLAGS)
+
+Graphic_allegro.o: Graphic_allegro.c
+	$(CC) -c Graphic_allegro.c -o Graphic_allegro.o $(CFLAGS)
