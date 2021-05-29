@@ -6,3 +6,6 @@ will be crop and resize and compare with average photos which was produced from 
 will start to work from that time.
 
 Besides above function this program can resize every photos and also it can crop multiple photos which are in table form and have white(RGB: 255, 255, 255) background. 
+
+
+Note:"Photos must be in bmp format and smaller than 2000 pixels - Clock photos must be in black and white(There are 3 test photos in the directory)"
